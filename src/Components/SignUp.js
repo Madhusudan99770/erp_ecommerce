@@ -14,32 +14,48 @@ export default function SignUp() {
         });
       
         const handleChange = (event) => {
+                  
           const { name, value } = event.target;
           setFormData((prevData) => ({
             ...prevData,
             [name]: value,
           }));
         };
-      
+        
+        // const handleSubmit = () => {
+   
+        //     const emailRegex = /\S+@\S+\.\S+/;
+        //     if (emailRegex.test(formData.email) && formData!="") {
+            
+        //       alert('Your email looks good!');
+        //     } else {
+              
+        //       alert('Please enter a valid email!');
+        //     }
+            
+           
+        //  };
         const handleSubmit = () => {
            console.log(formData,"formData")
           // Send the data to the backend server
-          fetch(`http://localhost:3003/Users`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              console.log(data);
-              navigate("/Login");
-              // Response from the server (success message)
-            })
-            .catch((error) => {
-              console.error('Error while posting data:', error);
-            });
+          debugger
+
+                const emailRegex = /\S+@\S+\.\S+/;
+                if (emailRegex.test(formData.email) && formData!="") {
+                    fetch(`http://localhost:3003/Users`, {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData),
+                      })
+                      navigate("/Login");
+                        
+                       
+                } else {                 
+                  alert('Please enter a valid email!');
+                }
+            
         };
       
 
@@ -60,7 +76,8 @@ export default function SignUp() {
           required=""
           name="email"
           value={formData.email}
-          onChange={handleChange} />
+          onChange={handleChange}
+          />
         </div>
         <div className="input-box">
           <input type="password" 

@@ -1,7 +1,51 @@
-import React from "react";
+import React ,  { useEffect, useState } from "react";
 import img from "../assets/img/loginImg.png";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+// import { BASE_URL } from "./../../config";
 
 export default function Login() {
+
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    loadUsers();
+    // document.body.classList.add("loginPage");
+  }, []);
+
+
+  const loadUsers = async () => {
+        axios.get(`http://localhost:3003/Users`).then((res)=>{
+        const response=res.data
+        console.log(response,"msd")
+        setUsers(response)
+
+       })
+       
+  };
+
+  const onSubmit = async (e) => {
+    // debugger
+    e.preventDefault();
+    
+    const isAuthenticated = users.map( (user) =>
+    user.name === name && user.password === password);
+    // navigate("/Dashboard");
+   console.log(isAuthenticated,"kjkjkjk")
+   isAuthenticated.map((item)=>{
+    if(item == true){
+      navigate("/Dashboard");
+    }
+    // else{
+    //   alert("email Or password not Correct")
+    // }
+   })
+    
+  };
+
   return (
     <div  className="main">
     <div className="container h-100" >
@@ -16,7 +60,7 @@ export default function Login() {
               </div>
             </div>
             <div className="d-flex justify-content-center form_container">
-              <form>
+              <form onSubmit={(e) => onSubmit(e)}>
                 <div className="input-group mb-3">
                   <div className="input-group-append">
                     <span className="input-group-text">
@@ -26,6 +70,9 @@ export default function Login() {
                   <input
                     type="text"
                     name=""
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+
                     className="form-control input_user"
                     defaultValue=""
                     placeholder="username"
@@ -41,6 +88,8 @@ export default function Login() {
                     type="password"
                     name=""
                     className="form-control input_pass"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                     defaultValue=""
                     placeholder="password"
                   />
@@ -61,8 +110,8 @@ export default function Login() {
                   </div>
                 </div>
                 <div className="d-flex justify-content-center mt-3 login_container">
-                  <button type="button" name="button" className="btn login_btn">
-                    <a href="/ModalFile"> Login</a>
+                  <button type="submit" name="button" className="btn login_btn">
+                     Login
                   </button>
                 </div>
               </form>

@@ -6,6 +6,83 @@
       "password": "mahipal123",
       "confurm": "mahipal123",
       "id": 1
+    },
+    {
+      "name": "Amit",
+      "email": "amit@gmail.com",
+      "password": "amit@123",
+      "confurm": "amit@123",
+      "id": 2
+    },
+    {
+      "name": "sonali",
+      "email": "sonali@gmail.com",
+      "password": "sonali@123",
+      "confurm": "sonali@123",
+      "id": 3
+    },
+    {
+      "name": "amita",
+      "email": "amita@cleanplan.com",
+      "password": "987",
+      "confurm": "987",
+      "id": 4
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "confurm": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "confurm": "",
+      "id": 6
+    },
+    {
+      "name": "sumit",
+      "email": "sumit@gmail.com",
+      "password": "321",
+      "confurm": "321",
+      "id": 7
+    },
+    {
+      "name": "madhu",
+      "email": "madhu@gmail.com",
+      "password": "1234",
+      "confurm": "1234",
+      "id": 8
+    },
+    {
+      "name": "madhusudan",
+      "email": "madhu@nagarsoftwaresolution.com",
+      "password": "0099",
+      "confurm": "0099",
+      "id": 9
+    },
+    {
+      "name": "mahipal",
+      "email": "mahi@gmail.com",
+      "password": "567",
+      "confurm": "567",
+      "id": 10
+    },
+    {
+      "name": "ankit",
+      "email": "ankit@gmail.com",
+      "password": "234",
+      "confurm": "234",
+      "id": 11
+    },
+    {
+      "name": "riya",
+      "email": "riya@gmail.com",
+      "password": "9090",
+      "confurm": "9090",
+      "id": 12
     }
   ]
 }
