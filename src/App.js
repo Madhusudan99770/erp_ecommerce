@@ -14,17 +14,23 @@ import "./assets/bootstrap/css/bootstrap.min.css"
 import Login from './Components/Login';
 import Contact from './Components/Contact';
 import ModalFile from './Components/ModalFile';
-
+import Home from './Components/Home';
+import SignUp from './Components/SignUp';
+import Footer from './Components/Footer';
 class App extends Component {
   render() {
     return (
       <div className="App">
          <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Template />} />
+        {/* <Route path="/" element={<Template />} /> */}
+        <Route path="/" element={<Home/>} />
+
         <Route path="/Login" element={<Login/>} />
         <Route path="/ModalFile" element={<ModalFile/>} />
         <Route path="/Contact" element={<Contact/>} />
+        <Route path="/Signup" element={<SignUp/>} />
+        <Route path="/Signup" element={<Footer/>} />
 
        
       </Routes>
